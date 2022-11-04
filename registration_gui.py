@@ -27,7 +27,8 @@ while True:
     if event == 'Registration':
         try:
             # Data validation
-            Validation.password_check(values['_PASSWORD_'], values['_CONFIRMEDPASSWORD_'])
+            Validation.check_password(values['_PASSWORD_'], values['_CONFIRMEDPASSWORD_'])
+            Validation.check_year(values['_YEAR_'])
             # Code for registration
             sg.popup('Successful Registration', font = ('Arial', 16))
         except Exception as ex:
