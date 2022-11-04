@@ -29,6 +29,7 @@ while True:
             # Data validation
             Validation.check_password(values['_PASSWORD_'], values['_CONFIRMEDPASSWORD_'])
             Validation.check_year(values['_YEAR_'])
+            Validation.check_email(values['_EMAIL_'])
             # Code for registration
             sg.popup('Successful Registration', font = ('Arial', 16))
         except Exception as ex:
