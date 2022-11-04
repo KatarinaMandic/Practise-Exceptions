@@ -9,6 +9,8 @@ layout = [
     sg.InputText(key = '_YEAR_')],
     [sg.Text('E-mail', size=(15,1)), 
     sg.InputText(key = '_EMAIL_')],
+    [sg.Text('Telephone', size=(15,1)), 
+    sg.InputText(key = '_TELEPHONE_')],
     [sg.Text('Password', size=(15,1)), 
     sg.InputText(key = '_PASSWORD_')],
     [sg.Text('Confirm password', size=(15,1)),
@@ -30,6 +32,7 @@ while True:
             Validation.check_password(values['_PASSWORD_'], values['_CONFIRMEDPASSWORD_'])
             Validation.check_year(values['_YEAR_'])
             Validation.check_email(values['_EMAIL_'])
+            Validation.check_telephone(values['_TELEPHONE_'])
             # Code for registration
             sg.popup('Successful Registration', font = ('Arial', 16))
         except Exception as ex:

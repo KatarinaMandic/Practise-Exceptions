@@ -1,6 +1,7 @@
 from exceptions.UnmatchedPasswordsError import UnmatchedPasswordsError
 from exceptions.InvalidYearError import InvalidYearError
 from exceptions.InvalidEmailError import InvalidEmailError
+from exceptions.InvalidTelephoneError import InvalidTelephoneError
 import re
 
 class Validation:
@@ -29,3 +30,10 @@ class Validation:
             return True
         else:
             raise InvalidEmailError()
+
+    def check_telephone(telephone):
+        pattern = re.compile('^06\d\s\d{3}\s\d{3,4}$')
+        if pattern.match(telephone) != None:
+            return True
+        else: 
+            raise InvalidTelephoneError()
